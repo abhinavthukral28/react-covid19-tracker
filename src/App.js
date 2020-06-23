@@ -20,15 +20,14 @@ class App extends React.Component {
     this.setState({ data: fetchedData });
   }
   render() {
-    console.log(this.state);
-
+    const { data, selectedCountry } = this.state;
     return (
       <div className={styles.container}>
-        <Cards data={this.state.data}></Cards>
+        <Cards data={data}></Cards>
         <CountryPicker
           handleCountryChange={this.handleCountryChange}
         ></CountryPicker>
-        <Chart></Chart>
+        <Chart data={data} country={selectedCountry}></Chart>
       </div>
     );
   }
