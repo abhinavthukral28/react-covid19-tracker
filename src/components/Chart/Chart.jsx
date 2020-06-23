@@ -11,7 +11,6 @@ const Chart = () => {
     };
     fetchApi();
   }, []);
-  console.log(dailyData);
   const lineChart = dailyData.length ? (
     <Line
       data={{
